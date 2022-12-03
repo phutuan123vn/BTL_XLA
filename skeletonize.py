@@ -1,6 +1,9 @@
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 img = cv2.imread('test skel.png',0)
+fig,anh=plt.subplots(1,2,figsize=(16,9))
+anh[0].imshow(img,cmap='gray')
 size = np.size(img)
 skel = np.zeros(img.shape, np.uint8)
 ret, img = cv2.threshold(img, 127, 255, 0)
@@ -17,6 +20,9 @@ while (not done):
     zeros = size - cv2.countNonZero(img)
     if zeros == size:
         done = True
-cv2.imshow("skel", skel)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+# anh[0].imshow(img,cmap='gray')
+anh[1].imshow(skel,cmap='gray')
+anh[0].set_title('Ảnh gốc')
+anh[1].set_title('Ảnh Xương hóa')
+plt.show()
