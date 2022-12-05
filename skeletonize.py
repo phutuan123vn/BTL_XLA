@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-img = cv2.imread('test skel.png',0)
+img = cv2.imread('SAMPLE/test skel.png',0)
 fig,anh=plt.subplots(1,2,figsize=(16,9))
 anh[0].imshow(img,cmap='gray')
 size = np.size(img)

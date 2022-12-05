@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-img = cv2.imread("test duong bao.png")
+img = cv2.imread("SAMPLE/test duong bao.png")
 kernel = np.ones((3,3),np.uint8)
 
 eroded = cv2.morphologyEx(img, cv2.MORPH_ERODE, kernel)

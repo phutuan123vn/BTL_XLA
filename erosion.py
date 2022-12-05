@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-img=cv2.imread('Sample_erosion.png',0)
+img=cv2.imread('SAMPLE/Sample_erosion.png',0)
 kernel=np.ones((3,3),dtype=np.uint8)
 imgErosion=cv2.erode(img,kernel,iterations=1)
 imgErosion3=cv2.erode(img,kernel,iterations=3)
@@ -12,4 +12,6 @@ anh[2].imshow(imgErosion3,cmap='gray')
 anh[0].set_title('Ảnh gốc')
 anh[1].set_title('Ảnh Erosion')
 anh[2].set_title('Ảnh Erosion 3 lần')
+cv2.imwrite('SAVED_IMAGE/ErosionImage.jpg',imgErosion)
+cv2.imwrite('SAVED_IMAGE/ErosionImage3.jpg',imgErosion3)
 plt.show()

@@ -1,6 +1,6 @@
 import cv2
 import matplotlib.pyplot as plt
-img1 = cv2.imread('test skel.png')
+img1 = cv2.imread('SAMPLE/test skel.png')
 img = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 # Threshold the image
 ret, thresh = cv2.threshold(img,50,255,0)

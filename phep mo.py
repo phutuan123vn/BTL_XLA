@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-img = cv2.imread('sample_opening.png',0)
+img = cv2.imread('SAMPLE/sample_opening.png',0)
 kernel = np.ones((3,3),np.uint8)
 opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel,iterations=1)
 opening3 = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel,iterations=3)
@@ -12,4 +12,6 @@ anh[2].imshow(opening3,cmap='gray')
 anh[0].set_title('Ảnh gốc')
 anh[1].set_title('Ảnh Opening')
 anh[2].set_title('Ảnh Opening lặp 3')
+cv2.imwrite('SAVED_IMAGE/OpeningImage.jpg',opening)
+cv2.imwrite('SAVED_IMAGE/OpeningImage3.jpg',opening3)
 plt.show()
